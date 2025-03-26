@@ -116,9 +116,11 @@ router.get("/all", async (req, res) => {
   try {
     const tasks = await Task.find().sort({ createdAt: -1 });
 
-    if (!tasks) return res.status(404).json({ message: "No tasks found" });
+    if (!tasks || tasks.length === 0) {
+      return res.status(404).json({ message: "No tasks found" });
+    }
 
-    return res.status(400).json({
+    return res.status(200).json({
       message: "Tasks retrieved successfully!",
       tasks,
     });
