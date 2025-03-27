@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8000/api/v1/task";
+const API_BASE_URL =
+  "https://algoroot-assignment-backend-six.vercel.app/api/v1/task";
 
 export const getTasks = async () => {
   const response = await axios.get(`${API_BASE_URL}/all`);
