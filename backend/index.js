@@ -11,7 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://algoroot-assignment-anish.vercel.app",
+    ],
     methods: ["GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
   })
